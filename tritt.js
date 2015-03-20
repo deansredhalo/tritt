@@ -65,40 +65,43 @@ Tritt.prototype.parseStylesAndScripts = function(element) {
 	var element = document.querySelector(element);
 
 	if (element.hasAttributes()) {
-		if (element.attributes['style'].nodeValue !== undefined) {
-			var styleNode = document.createElement('style');
+		if (element.attributes['shadow'] !== undefined) {
+			
+			if (element.attributes['style'].nodeValue !== undefined) {
+				var styleNode = document.createElement('style');
 
-			var styleNodeTypeAttr = document.createAttribute('type');
-			styleNodeTypeAttr.value = "text/css";
+				var styleNodeTypeAttr = document.createAttribute('type');
+				styleNodeTypeAttr.value = "text/css";
 
-			var styleContents;
+				var styleContents;
 
-			that.processFile(element.attributes['style'].nodeValue).then(function(response) {
-				styleContents = response;
+				that.processFile(element.attributes['style'].nodeValue).then(function(response) {
+					styleContents = response;
 
-				styleNode.attributes.setNamedItem(styleNodeTypeAttr);
+					styleNode.attributes.setNamedItem(styleNodeTypeAttr);
 
-				styleNode.textContent = styleContents;
+					styleNode.textContent = styleContents;
 
-				element.shadowRoot.insertBefore(styleNode, element.shadowRoot.childNodes[0]);
+					element.shadowRoot.insertBefore(styleNode, element.shadowRoot.childNodes[0]);
 
-				var scriptNode = document.createElement('script');
+					var scriptNode = document.createElement('script');
 
-				var scriptNodeTypeAttr = document.createAttribute('type');
-				scriptNodeTypeAttr.value = "text/javascript";
+					var scriptNodeTypeAttr = document.createAttribute('type');
+					scriptNodeTypeAttr.value = "text/javascript";
 
-				var scriptContents;
+					var scriptContents;
 
-				that.processFile(element.attributes['script'].nodeValue).then(function(response) {
-					scriptContents = response;
+					that.processFile(element.attributes['script'].nodeValue).then(function(response) {
+						scriptContents = response;
 
-					scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
+						scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
 
-					scriptNode.textContent = scriptContents;
-					
-					element.shadowRoot.insertBefore(scriptNode, element.shadowRoot.childNodes[element.shadowRoot.childNodes.length]);
+						scriptNode.textContent = scriptContents;
+						
+						element.shadowRoot.insertBefore(scriptNode, element.shadowRoot.childNodes[element.shadowRoot.childNodes.length]);
+					});
 				});
-			});
+			}
 		}
 	}
 };
