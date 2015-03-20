@@ -8,19 +8,22 @@
     <script type="text/javascript" src="tritt.js"></script>
     <script type="text/javascript">
       Tritt('happy-dance', {
-        init: function() {
+        trucks: function() {
           console.log('twit');
-        }
+        },
+        name: "Ricardo Lamas"
       });
 
-      var MoFuggin = new Tritt('guitar-slang');
+      Tritt('guitar-slang');
 
     </script>
   </head>
   <body>
     <div class="poop"></div>
     <happy-dance shadow style="style.css" script="script.js">
-      <div class="poop"></div>
+      <div class="poop" click="{{trucks()}}">
+        {{name}}
+      </div>
     </happy-dance>
     <guitar-slang></guitar-slang>
     <guitar-slang>

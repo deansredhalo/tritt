@@ -8,6 +8,7 @@ window.Tritt = function(element, events) {
 		Tritt.registerElement(element, events);
 		Tritt.createShadowDOM(element);
 		Tritt.parseStylesAndScripts(element);
+		Tritt.parseEvents(element);
 	}, false);
 };
 
@@ -19,14 +20,14 @@ Tritt.registerElement = function(element, events) {
 
 	CustomElementPrototype = Object.create(HTMLElement.prototype);
 
-	window.Tritt.attachEvents(CustomElementPrototype, events).then(function(response) {
-		console.log(response);
-		CustomElementPrototype = response;
-	});
-
 	try {
 		custom_element = document.registerElement(element, {
 			prototype: CustomElementPrototype
+		});
+
+		Tritt.attachEvents(element, events).then(function(response) {
+			console.log(element);
+			custom_element = response;
 		});
 
 		console.log('Registered Element', element);
@@ -89,7 +90,7 @@ Tritt.parseStylesAndScripts = function(element) {
 				styleNodeTypeAttr = document.createAttribute('type');
 				styleNodeTypeAttr.value = "text/css";
 
-				window.Tritt.processFile(element.attributes['style'].nodeValue).then(function(response) {
+				Tritt.processFile(element.attributes['style'].nodeValue).then(function(response) {
 					styleContents = response;
 
 					styleNode.attributes.setNamedItem(styleNodeTypeAttr);
@@ -107,7 +108,7 @@ Tritt.parseStylesAndScripts = function(element) {
 				scriptNodeTypeAttr = document.createAttribute('type');
 				scriptNodeTypeAttr.value = "text/javascript";
 
-				window.Tritt.processFile(element.attributes['script'].nodeValue).then(function(response) {
+				Tritt.processFile(element.attributes['script'].nodeValue).then(function(response) {
 					scriptContents = response;
 
 					scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
@@ -140,15 +141,45 @@ Tritt.processFile = function(file) {
 	});
 };
 
-Tritt.attachEvents = function(prototype, events) {
+Tritt.attachEvents = function(element, events) {
 
 	return new Promise(function(resolve, reject) {
+		element = document.querySelector(element);
+
 		for (var key in events) {
 			if (key !== undefined) {
-				prototype[key] = events[key];
+				element[key] = events[key];
 			}
 		}
 	});
-
-
 };
+
+Tritt.parseEvents = function(element) {
+	var regex;
+
+	element = document.querySelector(element);
+
+	if (element.shadowRoot) {
+		var bound = element.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
+
+		for (var i = 0; i < bound.length; i++) {
+
+			if (bound[i].indexOf('{{') !== -1) {
+				var bound1 = bound[i].replace(/{{/g, '');
+				var bound2 = bound1.replace(/}}/g, '');
+				console.log(bound2);
+
+				if (bound2.indexOf('()') === -1) {
+					var binding = element[bound2];
+					var rewritable = element.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
+					console.log(binding, rewritable);
+					document.write(bound2.replace(rewritable, binding));
+				}
+				else {
+					var rewritable = bound2.replace(/\(\)/g, '');
+					element[rewritable]();
+				}
+			}
+		}
+	}
+}
