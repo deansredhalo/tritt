@@ -3,22 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>emma-nav-main Demo</title>
+    <title>Tritt Demo</title>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     <script type="text/javascript" src="tritt.js"></script>
     <script type="text/javascript">
-      window.addEventListener('DOMContentLoaded', runTritt(), false);
+      var Travis = new Tritt();
 
-      function runTritt() {
-        var Travis = new Tritt('happy-dance');
-        Travis.options = {
-          "textContent": "Nawpy!"
-        };
-      }
+      var Travis = new Tritt('happy-dance');
 
+      Travis.options = {
+        useShadow: true
+      };
 
+      var MoFuggin = new Tritt('guitar-slang');
+
+      MoFuggin.options = {
+        textContent: "Yeeeh!"
+      };
     </script>
   </head>
   <body>
+    <happy-dance>
+      <div class="poop"></div>
+    </happy-dance>
+    <guitar-slang></guitar-slang>
+    <guitar-slang></guitar-slang>
     <happy-dance></happy-dance>
   </body>
 </html>
