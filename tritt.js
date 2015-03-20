@@ -1,24 +1,31 @@
 'use strict';
 
-var useShadow;
-
-function Tritt(element){
+window.Tritt = function(element, events) {
+	console.log(events);
 	var that = this;
 
 	window.addEventListener('DOMContentLoaded', function() {
-		that.registerElement(element);
-		that.createShadowDOM(element);
-		that.parseStylesAndScripts(element);
+		Tritt.registerElement(element, events);
+		Tritt.createShadowDOM(element);
+		Tritt.parseStylesAndScripts(element);
 	}, false);
 };
 
-Tritt.prototype.registerElement = function(element) {
+Tritt.registerElement = function(element, events) {
 	var that = this;
 
-	var CustomElementPrototype = Object.create(HTMLElement.prototype);
+	var CustomElementPrototype;
+	var custom_element;
+
+	CustomElementPrototype = Object.create(HTMLElement.prototype);
+
+	window.Tritt.attachEvents(CustomElementPrototype, events).then(function(response) {
+		console.log(response);
+		CustomElementPrototype = response;
+	});
 
 	try {
-		var custom_element = document.registerElement(element, {
+		custom_element = document.registerElement(element, {
 			prototype: CustomElementPrototype
 		});
 
@@ -31,23 +38,25 @@ Tritt.prototype.registerElement = function(element) {
 	}
 };
 
-Tritt.prototype.createShadowDOM = function(element) {
+Tritt.createShadowDOM = function(element) {
 	var that = this;
 
-	var unaltered = document.querySelectorAll(element);
+	var unaltered;
+
+	unaltered = document.querySelectorAll(element);
 
 	(function() {
 		for (var i = 0; i < unaltered.length; i++) {
 			if (unaltered[i].hasAttributes()) {
 				if (unaltered[i].attributes['shadow'] !== undefined) {
-					that.populateShadowDOM(unaltered[i]);
+					window.Tritt.populateShadowDOM(unaltered[i]);
 				}
 			}
 		}
 	})();
 };
 
-Tritt.prototype.populateShadowDOM = function(element) {	
+Tritt.populateShadowDOM = function(element) {	
 	var shadow = element.createShadowRoot();
 
 	shadow.innerHTML = element.innerHTML;
@@ -59,23 +68,28 @@ Tritt.prototype.populateShadowDOM = function(element) {
 	return;
 };
 
-Tritt.prototype.parseStylesAndScripts = function(element) {
+Tritt.parseStylesAndScripts = function(element) {
 	var that = this;
+
+	var styleNode;
+	var styleNodeTypeAttr;
+	var styleContents;
+	var scriptNode;
+	var scriptNodeTypeAttr;
+	var scriptContents;
 
 	var element = document.querySelector(element);
 
 	if (element.hasAttributes()) {
 		if (element.attributes['shadow'] !== undefined) {
-			
-			if (element.attributes['style'].nodeValue !== undefined) {
-				var styleNode = document.createElement('style');
 
-				var styleNodeTypeAttr = document.createAttribute('type');
+			if (element.attributes['style'].nodeValue !== undefined) {
+				styleNode = document.createElement('style');
+
+				styleNodeTypeAttr = document.createAttribute('type');
 				styleNodeTypeAttr.value = "text/css";
 
-				var styleContents;
-
-				that.processFile(element.attributes['style'].nodeValue).then(function(response) {
+				window.Tritt.processFile(element.attributes['style'].nodeValue).then(function(response) {
 					styleContents = response;
 
 					styleNode.attributes.setNamedItem(styleNodeTypeAttr);
@@ -84,29 +98,30 @@ Tritt.prototype.parseStylesAndScripts = function(element) {
 
 					element.shadowRoot.insertBefore(styleNode, element.shadowRoot.childNodes[0]);
 
-					var scriptNode = document.createElement('script');
+				});
+			}
 
-					var scriptNodeTypeAttr = document.createAttribute('type');
-					scriptNodeTypeAttr.value = "text/javascript";
+			if (element.attributes['script'].nodeValue !== undefined) {
+				scriptNode = document.createElement('script');
 
-					var scriptContents;
+				scriptNodeTypeAttr = document.createAttribute('type');
+				scriptNodeTypeAttr.value = "text/javascript";
 
-					that.processFile(element.attributes['script'].nodeValue).then(function(response) {
-						scriptContents = response;
+				window.Tritt.processFile(element.attributes['script'].nodeValue).then(function(response) {
+					scriptContents = response;
 
-						scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
+					scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
 
-						scriptNode.textContent = scriptContents;
-						
-						element.shadowRoot.insertBefore(scriptNode, element.shadowRoot.childNodes[element.shadowRoot.childNodes.length]);
-					});
+					scriptNode.textContent = scriptContents;
+					
+					element.shadowRoot.insertBefore(scriptNode, element.shadowRoot.childNodes[element.shadowRoot.childNodes.length]);
 				});
 			}
 		}
 	}
 };
 
-Tritt.prototype.processFile = function(file) {
+Tritt.processFile = function(file) {
 
 	var loc = window.location.pathname;
 	var dir = loc.substring(0, loc.lastIndexOf('/'));
@@ -122,6 +137,17 @@ Tritt.prototype.processFile = function(file) {
 			}
 		}
 		xmlhttp.send();
+	});
+};
+
+Tritt.attachEvents = function(prototype, events) {
+
+	return new Promise(function(resolve, reject) {
+		for (var key in events) {
+			if (key !== undefined) {
+				prototype[key] = events[key];
+			}
+		}
 	});
 
 
