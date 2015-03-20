@@ -7,27 +7,20 @@
     <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     <script type="text/javascript" src="tritt.js"></script>
     <script type="text/javascript">
-      var Travis = new Tritt();
-
       var Travis = new Tritt('happy-dance');
-
-      Travis.options = {
-        useShadow: true
-      };
 
       var MoFuggin = new Tritt('guitar-slang');
 
-      MoFuggin.options = {
-        textContent: "Yeeeh!"
-      };
     </script>
   </head>
   <body>
-    <happy-dance>
+    <div class="poop"></div>
+    <happy-dance shadow style="style.css" script="script.js">
       <div class="poop"></div>
     </happy-dance>
     <guitar-slang></guitar-slang>
-    <guitar-slang></guitar-slang>
-    <happy-dance></happy-dance>
+    <guitar-slang>
+      <div class="poop"></div>
+    </guitar-slang>
   </body>
 </html>
