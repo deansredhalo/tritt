@@ -209,3 +209,6 @@ Tritt.watchForChanges = function(element, object) {
 		});
 	}
 };
+
+// TODO: Bring in events, such as click, mouseover, etc
+ 
