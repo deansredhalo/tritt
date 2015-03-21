@@ -13,13 +13,11 @@ window.Tritt = function(element, events) {
 		}
 	}
 
-	console.log(window.hostElements);
-
 	window.addEventListener('DOMContentLoaded', function() {
 		Tritt.registerElement(element, events);
 		Tritt.createShadowDOM(element);
 		Tritt.parseStylesAndScripts(element);
-		Tritt.parseEvents(element, events['bindings']);
+		Tritt.parseBindings(element, events['bindings']);
 	}, false);
 };
 
@@ -167,7 +165,7 @@ Tritt.attachEvents = function(element, events) {
 	});
 };
 
-Tritt.parseEvents = function(element, bindings) {
+Tritt.parseBindings = function(element, bindings) {
 	var elementSel = document.querySelector(element);
 
 	if (elementSel.shadowRoot) {
@@ -204,11 +202,10 @@ Tritt.watchForChanges = function(element, object) {
 	if (object !== undefined) {
 		Object.observe(object, function(changes) {
 			for (var i = 0; i < changes.length; i++) {
-				Tritt.parseEvents(element, changes[i].object);
+				Tritt.parseBindings(element, changes[i].object);
 			}
 		});
 	}
 };
 
 // TODO: Bring in events, such as click, mouseover, etc
- 

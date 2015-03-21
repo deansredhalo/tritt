@@ -10,7 +10,10 @@
       Tritt('happy-dance', {
         events: {
           trucks: function() {
-            console.log('twit');
+            document.querySelector('happy-dance').addEventListener('mouseover', function() {
+              document.querySelector('::shadow div').style.backgroundColor = 'blue';
+            });
+
           },
         },
         bindings : {
@@ -25,12 +28,15 @@
   <body>
     <div class="poop"></div>
     <happy-dance shadow style="style.css" script="script.js">
-      <div class="poop" click="{{trucks()}}">
+      <div class="poop" action="{{trucks()}}">
         <span bind="{{name}}"></span>
       </div>
       <div>
         <span bind="{{name}}"></span>
       </div>
+    </happy-dance>
+    <happy-dance shadow>
+      <div class="poop"></div>
     </happy-dance>
     <guitar-slang></guitar-slang>
     <guitar-slang>
