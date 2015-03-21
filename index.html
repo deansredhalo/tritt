@@ -8,10 +8,14 @@
     <script type="text/javascript" src="tritt.js"></script>
     <script type="text/javascript">
       Tritt('happy-dance', {
-        trucks: function() {
-          console.log('twit');
+        events: {
+          trucks: function() {
+            console.log('twit');
+          },
         },
-        name: "Ricardo Lamas"
+        bindings : {
+          name: "Ricardo Lamas"
+        }
       });
 
       Tritt('guitar-slang');
@@ -22,7 +26,10 @@
     <div class="poop"></div>
     <happy-dance shadow style="style.css" script="script.js">
       <div class="poop" click="{{trucks()}}">
-        {{name}}
+        <span bind="{{name}}"></span>
+      </div>
+      <div>
+        <span bind="{{name}}"></span>
       </div>
     </happy-dance>
     <guitar-slang></guitar-slang>

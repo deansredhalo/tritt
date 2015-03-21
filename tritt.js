@@ -1,14 +1,25 @@
 'use strict';
 
+window.hostElements = [];
+
 window.Tritt = function(element, events) {
-	console.log(events);
+	events = events || {};
 	var that = this;
+
+	window.hostElements.push({ 'name': element });
+	for (var i = 0; i < window.hostElements.length; i++) {
+		if (window.hostElements[i]['name'] === element) {
+			window.hostElements[i].events = events;
+		}
+	}
+
+	console.log(window.hostElements);
 
 	window.addEventListener('DOMContentLoaded', function() {
 		Tritt.registerElement(element, events);
 		Tritt.createShadowDOM(element);
 		Tritt.parseStylesAndScripts(element);
-		Tritt.parseEvents(element);
+		Tritt.parseEvents(element, events['bindings']);
 	}, false);
 };
 
@@ -146,40 +157,55 @@ Tritt.attachEvents = function(element, events) {
 	return new Promise(function(resolve, reject) {
 		element = document.querySelector(element);
 
-		for (var key in events) {
-			if (key !== undefined) {
-				element[key] = events[key];
+		if (events) {
+			for (var key in events['events']) {
+				if (key !== undefined) {
+					element[key] = events.events[key];
+				}
 			}
 		}
 	});
 };
 
-Tritt.parseEvents = function(element) {
-	var regex;
+Tritt.parseEvents = function(element, bindings) {
+	var elementSel = document.querySelector(element);
 
-	element = document.querySelector(element);
-
-	if (element.shadowRoot) {
-		var bound = element.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
+	if (elementSel.shadowRoot) {
+		var bound = elementSel.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
 
 		for (var i = 0; i < bound.length; i++) {
 
 			if (bound[i].indexOf('{{') !== -1) {
 				var bound1 = bound[i].replace(/{{/g, '');
 				var bound2 = bound1.replace(/}}/g, '');
-				console.log(bound2);
 
 				if (bound2.indexOf('()') === -1) {
-					var binding = element[bound2];
-					var rewritable = element.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
-					console.log(binding, rewritable);
-					document.write(bound2.replace(rewritable, binding));
+					if (elementSel.shadowRoot.querySelectorAll('[bind]')) {
+						for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
+							if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].nodeValue === bound[i]) {
+								var bindValue = bindings[bound2];
+								elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue;		
+							} 
+						}
+					}
 				}
 				else {
 					var rewritable = bound2.replace(/\(\)/g, '');
-					element[rewritable]();
+					elementSel[rewritable]();
 				}
 			}
 		}
 	}
-}
+
+	Tritt.watchForChanges(element, bindings);
+};
+
+Tritt.watchForChanges = function(element, object) {
+	if (object !== undefined) {
+		Object.observe(object, function(changes) {
+			for (var i = 0; i < changes.length; i++) {
+				Tritt.parseEvents(element, changes[i].object);
+			}
+		});
+	}
+};
