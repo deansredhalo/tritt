@@ -189,57 +189,63 @@ Tritt.parseStylesAndScripts = function(element) {
 		if (element.attributes['shadow'] !== undefined) {
 
 			// does our element have a style attribute
-			if (element.attributes['style'].nodeValue !== undefined) {
+			if(element.attributes['style'] !== undefined) {
+				
+				if (element.attributes['style'].nodeValue !== undefined) {
 
-				// create a style element
-				styleNode = document.createElement('style');
+					// create a style element
+					styleNode = document.createElement('style');
 
-				// set the type attribute to text/css
-				styleNodeTypeAttr = document.createAttribute('type');
-				styleNodeTypeAttr.value = "text/css";
+					// set the type attribute to text/css
+					styleNodeTypeAttr = document.createAttribute('type');
+					styleNodeTypeAttr.value = "text/css";
 
-				// read the style file
-				Tritt.processFile(element.attributes['style'].nodeValue).then(function(response) {
+					// read the style file
+					Tritt.processFile(element.attributes['style'].nodeValue).then(function(response) {
 
-					// set the content
-					styleContents = response;
+						// set the content
+						styleContents = response;
 
-					// add the type attribute
-					styleNode.attributes.setNamedItem(styleNodeTypeAttr);
+						// add the type attribute
+						styleNode.attributes.setNamedItem(styleNodeTypeAttr);
 
-					// make the content equal the contents of the file
-					styleNode.textContent = styleContents;
+						// make the content equal the contents of the file
+						styleNode.textContent = styleContents;
 
-					// place this guy before the first element in the shadow DOM
-					element.shadowRoot.insertBefore(styleNode, element.shadowRoot.childNodes[0]);
-				});
+						// place this guy before the first element in the shadow DOM
+						element.shadowRoot.insertBefore(styleNode, element.shadowRoot.childNodes[0]);
+					});
+				}
 			}
 
 			// what about a script attribute?
-			if (element.attributes['script'].nodeValue !== undefined) {
+			if (element.attributes['script'] !== undefined) {
 
-				// create a new element for the script
-				scriptNode = document.createElement('script');
+				if (element.attributes['script'].nodeValue !== undefined) {
 
-				// set the script type attribute to text/javascript
-				scriptNodeTypeAttr = document.createAttribute('type');
-				scriptNodeTypeAttr.value = "text/javascript";
+					// create a new element for the script
+					scriptNode = document.createElement('script');
 
-				// read the script
-				Tritt.processFile(element.attributes['script'].nodeValue).then(function(response) {
-					
-					// grab the contents
-					scriptContents = response;
+					// set the script type attribute to text/javascript
+					scriptNodeTypeAttr = document.createAttribute('type');
+					scriptNodeTypeAttr.value = "text/javascript";
 
-					// add the type attribute
-					scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
+					// read the script
+					Tritt.processFile(element.attributes['script'].nodeValue).then(function(response) {
+						
+						// grab the contents
+						scriptContents = response;
 
-					// set the content equal to the file
-					scriptNode.textContent = scriptContents;
-					
-					// insert the new tag before the last element in the shadow DOM
-					element.shadowRoot.insertBefore(scriptNode, element.shadowRoot.childNodes[element.shadowRoot.childNodes.length]);
-				});
+						// add the type attribute
+						scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
+
+						// set the content equal to the file
+						scriptNode.textContent = scriptContents;
+						
+						// insert the new tag before the last element in the shadow DOM
+						element.shadowRoot.insertBefore(scriptNode, element.shadowRoot.childNodes[element.shadowRoot.childNodes.length]);
+					});
+				}
 			}
 		}
 	}

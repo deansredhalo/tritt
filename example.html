@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tritt Demo</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script type="text/javascript" src="tritt.js"></script>
+    <script type="text/javascript">
+    	Tritt('custom-greeting', {
+			events: {
+				changeGreeting: function(rootElement, rootShadow, bindings) {
+					rootElement.addEventListener('mouseover', function() {
+						bindings.userName = 'Travis Tritt!';
+					});
+					rootElement.addEventListener('mouseout', function() {
+						bindings.userName = 'Reveal user name...';
+					});
+				}
+			},
+			bindings: {
+				userName: "Reveal user name..."
+			}
+		});
+	</script>
+	</head>
+	<body>
+		<custom-greeting shadow style="style.css">
+			<div action="{{changeGreeting()}}">
+				<span bind="{{userName}}"></span>
+			</div>
+		</custom-greeting>
+	</body>
+</html>
