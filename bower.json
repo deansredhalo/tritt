@@ -1,0 +1,26 @@
+{
+  "name": "tritt",
+  "description": "Simple custom elements and web components with data binding.",
+  "version": "0.0.1",
+  "authors": "T-Jay Tipps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deansredhalo/tritt"
+  },
+  "keywords": [
+    "web-components",
+    "data binding",
+    "custom elements"
+  ],
+  "main": "tritt.js",
+  "private": false,
+  "dependencies": {
+    "webcomponentsjs": "https://github.com/webcomponents/webcomponentsjs",
+    "gulp": "~3.8.11"
+  },
+  "license": "MIT",
+  "ignore": [
+    "script.js",
+    "style.css"
+  ]
+}

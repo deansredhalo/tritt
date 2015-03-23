@@ -1,0 +1,1226 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    
+    
+    <title>webcomponents/webcomponentsjs · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="webcomponents/webcomponentsjs" name="twitter:title" /><meta content="webcomponentsjs - A suite of polyfills supporting the HTML Web Components specs" name="twitter:description" /><meta content="https://avatars2.githubusercontent.com/u/1905708?v=3&amp;s=400" name="twitter:image:src" />
+      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars2.githubusercontent.com/u/1905708?v=3&amp;s=400" property="og:image" /><meta content="webcomponents/webcomponentsjs" property="og:title" /><meta content="https://github.com/webcomponents/webcomponentsjs" property="og:url" /><meta content="webcomponentsjs - A suite of polyfills supporting the HTML Web Components specs" property="og:description" />
+      <meta name="browser-stats-url" content="/_stats">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+      <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="D177E342:4D91:1C6C071:551052AC" name="octolytics-dimension-request_id" />
+    
+    <meta content="Rails, view, files#disambiguate" name="analytics-event" />
+
+    
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="YF0nDxfUNjVXJdQSHBK7yDFGB2XVeTB9DXK3aE/CIWN0FG2HpXem2SGy2qbz4bxvEf3Iyh7CTdbRKA3mM/ey2A==" name="csrf-token" />
+
+    <link href="https://assets-cdn.github.com/assets/github-099e0ecc2851c8aca89ef6dafa191df3b0f2a2c8ad34e134c5473ca1ba0a59b2.css" media="all" rel="stylesheet" />
+    <link href="https://assets-cdn.github.com/assets/github2-40d9bf14363443ccf64a2b71208f59e8739d6288d962feba121227e0608772f3.css" media="all" rel="stylesheet" />
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="b6b9548efafbc4235d9cb55e3ba0c038">
+
+      
+  <meta name="description" content="webcomponentsjs - A suite of polyfills supporting the HTML Web Components specs">
+  <meta name="go-import" content="github.com/webcomponents/webcomponentsjs git https://github.com/webcomponents/webcomponentsjs.git">
+
+  <meta content="1905708" name="octolytics-dimension-user_id" /><meta content="webcomponents" name="octolytics-dimension-user_login" /><meta content="25003905" name="octolytics-dimension-repository_id" /><meta content="webcomponents/webcomponentsjs" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="25003905" name="octolytics-dimension-repository_network_root_id" /><meta content="webcomponents/webcomponentsjs" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/webcomponents/webcomponentsjs/commits/master.atom" rel="alternate" title="Recent Commits to webcomponentsjs:master" type="application/atom+xml">
+
+  </head>
+
+
+  <body class="logged_out  env-production  vis-public">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+
+
+        
+        <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="btn btn-primary" href="/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="btn" href="/login?return_to=%2Fwebcomponents%2Fwebcomponentsjs" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <form accept-charset="UTF-8" action="/webcomponents/webcomponentsjs/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/webcomponents/webcomponentsjs/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <input type="text"
+    class="js-site-search-field is-clearable"
+    data-hotkey="s"
+    name="q"
+    placeholder="Search"
+    data-global-scope-placeholder="Search GitHub"
+    data-repo-scope-placeholder="Search"
+    tabindex="1"
+    autocapitalize="off">
+  <div class="scope-badge">This repository</div>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/blog" data-ga-click="(Logged out) Header, go to blog, text:blog">Blog</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="/login?return_to=%2Fwebcomponents%2Fwebcomponentsjs"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <span class="octicon octicon-eye"></span>
+    Watch
+  </a>
+  <a class="social-count" href="/webcomponents/webcomponentsjs/watchers">
+    78
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fwebcomponents%2Fwebcomponentsjs"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/webcomponents/webcomponentsjs/stargazers">
+      508
+    </a>
+
+  </li>
+
+    <li>
+      <a href="/login?return_to=%2Fwebcomponents%2Fwebcomponentsjs"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+      <a href="/webcomponents/webcomponentsjs/network" class="social-count">
+        79
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="/webcomponents" class="url fn" itemprop="url" rel="author"><span itemprop="title">webcomponents</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="/webcomponents/webcomponentsjs" class="js-current-repository" data-pjax="#js-repo-pjax-container">webcomponentsjs</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline with-full-navigation ">
+        <div class="repository-sidebar clearfix">
+            
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container"
+     data-issue-count-url="/webcomponents/webcomponentsjs/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="/webcomponents/webcomponentsjs" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /webcomponents/webcomponentsjs">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="/webcomponents/webcomponentsjs/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /webcomponents/webcomponentsjs/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="js-issue-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
+      <a href="/webcomponents/webcomponentsjs/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /webcomponents/webcomponentsjs/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
+          <span class="js-pull-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+
+
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="/webcomponents/webcomponentsjs/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /webcomponents/webcomponentsjs/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="/webcomponents/webcomponentsjs/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /webcomponents/webcomponentsjs/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+              <div class="only-with-full-nav">
+                  
+<div class="clone-url open"
+  data-protocol-type="http"
+  data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/webcomponents/webcomponentsjs.git" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="clone-url "
+  data-protocol-type="subversion"
+  data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/webcomponents/webcomponentsjs" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+  <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a> or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</p>
+
+
+
+                <a href="/webcomponents/webcomponentsjs/archive/master.zip"
+                   class="btn btn-sm sidebar-button"
+                   aria-label="Download the contents of webcomponents/webcomponentsjs as a zip file"
+                   title="Download the contents of webcomponents/webcomponentsjs as a zip file"
+                   rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+          
+<span id="js-show-full-navigation"></span>
+
+<div class="repository-meta js-details-container ">
+    <div class="repository-description">
+      A suite of polyfills supporting the HTML Web Components specs
+    </div>
+
+    <div class="repository-website">
+      <p><a href="http://webcomponents.org/polyfills/" rel="nofollow">http://webcomponents.org/polyfills/</a></p>
+    </div>
+
+
+</div>
+
+<div class="overall-summary overall-summary-bottomless">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax href="/webcomponents/webcomponentsjs/commits/master">
+            <span class="octicon octicon-history"></span>
+            <span class="num text-emphasized">
+              217
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax href="/webcomponents/webcomponentsjs/branches">
+          <span class="octicon octicon-git-branch"></span>
+          <span class="num text-emphasized">
+            11
+          </span>
+          branches
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax href="/webcomponents/webcomponentsjs/releases">
+          <span class="octicon octicon-tag"></span>
+          <span class="num text-emphasized">
+            12
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        
+  <a href="/webcomponents/webcomponentsjs/graphs/contributors">
+    <span class="octicon octicon-organization"></span>
+    <span class="num text-emphasized">
+      28
+    </span>
+    contributors
+  </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="/webcomponents/webcomponentsjs/search?l=javascript">
+                <span class="color-block language-color" style="background-color:#f1e05a;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">86.3%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/webcomponents/webcomponentsjs/search?l=html">
+                <span class="color-block language-color" style="background-color:#e44b23;"></span>
+                <span class="lang">HTML</span>
+                <span class="percent">12.9%</span>
+              </a>
+          </li>
+          <li>
+              <span class="other">
+                <span data-lang="Other" class="color-block language-color" style="background-color:#ededed;"></span>
+                <span class="lang">Other</span>
+                <span class="percent">0.8%</span>
+              </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details">
+    <span class="language-color" aria-label="JavaScript 86.3%" style="width:86.3%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+    <span class="language-color" aria-label="HTML 12.9%" style="width:12.9%; background-color:#e44b23;" itemprop="keywords">HTML</span>
+    <span class="language-color" aria-label="Other 0.8%" style="width:0.8%; background-color:#ededed;" itemprop="keywords">Other</span>
+  </div>
+
+<include-fragment src="/webcomponents/webcomponentsjs/show_partial?partial=recently_touched_branches_list"></include-fragment>
+
+<div class="file-navigation in-mid-page">
+  <a href="/webcomponents/webcomponentsjs/find/master"
+        class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s right"
+        data-pjax
+        data-hotkey="t"
+        aria-label="Quickly jump between files">
+    <span class="octicon octicon-list-unordered"></span>
+  </a>
+    <a href="/webcomponents/webcomponentsjs/compare" aria-label="Compare, review, create a pull request" class="btn btn-sm btn-primary tooltipped tooltipped-s left compare-button" aria-label="Compare &amp; review" data-pjax data-ga-click="Repository, go to compare view, location:repo overview; icon:git-compare">
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    data-master-branch="master"
+    data-ref="master"
+    title="master"
+    role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/activeElement"
+               data-name="activeElement"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="activeElement">
+                activeElement
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/ie-lite-fixes"
+               data-name="ie-lite-fixes"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="ie-lite-fixes">
+                ie-lite-fixes
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/implicit-dep"
+               data-name="implicit-dep"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="implicit-dep">
+                implicit-dep
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/import-stylesheets"
+               data-name="import-stylesheets"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="import-stylesheets">
+                import-stylesheets
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/imports-ce-upgrade"
+               data-name="imports-ce-upgrade"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="imports-ce-upgrade">
+                imports-ce-upgrade
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/issue-168"
+               data-name="issue-168"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="issue-168">
+                issue-168
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/webcomponents/webcomponentsjs/tree/master"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/revert-243-activeElement"
+               data-name="revert-243-activeElement"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="revert-243-activeElement">
+                revert-243-activeElement
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/upstream_v0_5"
+               data-name="upstream_v0_5"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="upstream_v0_5">
+                upstream_v0_5
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/url-load-order"
+               data-name="url-load-order"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="url-load-order">
+                url-load-order
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/webcomponents/webcomponentsjs/tree/url-polyfill"
+               data-name="url-polyfill"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="url-polyfill">
+                url-polyfill
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/v0.6.0"
+                 data-name="v0.6.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v0.6.0">v0.6.0</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/v0.4.2"
+                 data-name="v0.4.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="v0.4.2">v0.4.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.5-rc1"
+                 data-name="0.5.5-rc1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.5-rc1">0.5.5-rc1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.5"
+                 data-name="0.5.5"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.5">0.5.5</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.4"
+                 data-name="0.5.4"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.4">0.5.4</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.3-rc2"
+                 data-name="0.5.3-rc2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.3-rc2">0.5.3-rc2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.3-rc"
+                 data-name="0.5.3-rc"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.3-rc">0.5.3-rc</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.3"
+                 data-name="0.5.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.3">0.5.3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.2"
+                 data-name="0.5.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.2">0.5.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.1-1"
+                 data-name="0.5.1-1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.1-1">0.5.1-1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.1"
+                 data-name="0.5.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.1">0.5.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/webcomponents/webcomponentsjs/tree/0.5.0"
+                 data-name="0.5.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="0.5.0">0.5.0</a>
+            </div>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="breadcrumb"><span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/webcomponents/webcomponentsjs" class="" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">webcomponentsjs</span></a></span></span><span class="separator">/</span>
+    <a class="btn-link disabled tooltipped tooltipped-e" href="#" aria-label="You must be signed in to make or propose changes">
+      <span class="octicon octicon-plus"></span>
+    </a>
+</div>
+</div>
+
+
+
+  
+  <div class="commit commit-tease js-details-container" >
+    <p class="commit-title ">
+        <a href="/webcomponents/webcomponentsjs/commit/683a5519adc3bab97d096b4b1e912decd6492903" class="message" data-pjax="true" title="prepare for release v0.6.0">prepare for release v0.6.0</a>
+        
+    </p>
+    <div class="commit-meta">
+      <button aria-label="Copy SHA" class="js-zeroclipboard zeroclipboard-link" data-clipboard-text="683a5519adc3bab97d096b4b1e912decd6492903" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+      <a href="/webcomponents/webcomponentsjs/commit/683a5519adc3bab97d096b4b1e912decd6492903" class="sha-block" data-pjax>latest commit <span class="sha">683a5519ad</span></a>
+
+      <div class="authorship">
+        <img alt="@azakus" class="avatar" data-user="46725" height="20" src="https://avatars2.githubusercontent.com/u/46725?v=3&amp;s=40" width="20" />
+        <span class="author-name"><a href="/azakus" rel="contributor">azakus</a></span>
+        authored <time class="updated" datetime="2015-03-20T22:01:16Z" is="relative-time">Mar 20, 2015</time>
+
+      </div>
+    </div>
+  </div>
+
+  
+<div class="file-wrap">
+
+  <table class="files" data-pjax>
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><span class="octicon octicon-alert"></span></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/tree/master/src" class="js-directory-link" id="25d902c24283ab8cfbac54dfa101ad31-fde4fe7c8ad8dc2acc825da9630d07c0e55cd3f4" title="src">src</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/3bd6a8b05e00c61b96ecaf17fe8340142002a67f" class="message" data-pjax="true" title="Add URL polyfill again.">Add URL polyfill again.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-20T19:17:05Z" is="time-ago">Mar 20, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/tree/master/tests" class="js-directory-link" id="b61a6d542f9036550ba9c401c80f00ef-ee51ae38deeded98c4afdb1432a39a1e5be0de6c" title="tests">tests</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/f4d606eabbdeaf64306d3c4b42bc777f5245a2ef" class="message" data-pjax="true" title="styling issues and support the filter as a function. IE requires it.">styling issues and support the filter as a function. IE requires it.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-10T21:25:43Z" is="time-ago">Mar 10, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/tree/master/workbench" class="js-directory-link" id="1e7c765a3b0446e6dba13f170c4b53dd-b3fb27187a04190cb32db389ac118f57512af02d" title="workbench">workbench</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/7dc6731eb9c9f9c3fea4419c50c6ee3ca0367544" class="message" data-pjax="true" title="Consistent license headers">Consistent license headers</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-11-25T01:04:36Z" is="time-ago">Nov 24, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/.autoclave-build.sh" class="js-directory-link" id="ec3f6fd1ab7ce1f46ae0174fa513e259-8bf33e6f6a205ae50665be9a07c0d9b8a0589e6d" title=".autoclave-build.sh">.autoclave-build.sh</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/0702a3f9aaf41289f56e49b29fa9c5ec06b1ede5" class="message" data-pjax="true" title="Get list of files from dist folder">Get list of files from dist folder</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-28T00:00:13Z" is="time-ago">Jan 27, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/.gitignore" class="js-directory-link" id="a084b794bc0759e7a6b77810e01874f2-f06235c460c2de3d97efc8371125594b7b761b08" title=".gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/14192b434cfe456011de542d10bc8fde5833f7e2" class="message" data-pjax="true" title="add license header to builds">add license header to builds</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-10-14T18:31:55Z" is="time-ago">Oct 14, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/CONTRIBUTING.md" class="js-directory-link" id="6a3371457528722a734f3c51d9238c13-1155eba3ccef3e928e16f86ab0e204772b1ff2ba" title="CONTRIBUTING.md">CONTRIBUTING.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/2196ee573ce354f0a6d02618341a05d07f94b07d" class="message" data-pjax="true" title="Add initial contributing guide">Add initial contributing guide</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-11-13T15:46:47Z" is="time-ago">Nov 13, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/LICENSE.md" class="js-directory-link" id="37854d19817c792316d481f5beb93cc7-bb3f440330fe54e40bce7c3036809fba34f0d9f6" title="LICENSE.md">LICENSE.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/1c891e4b0171e7b9f1e023b6ba66918c0b474819" class="message" data-pjax="true" title="Fixes #137 - adds LICENSE information">Fixes</a> <a href="https://github.com/webcomponents/webcomponentsjs/issues/137" class="issue-link" title="Add LICENCE file">#137</a> <a href="/webcomponents/webcomponentsjs/commit/1c891e4b0171e7b9f1e023b6ba66918c0b474819" class="message" data-pjax="true" title="Fixes #137 - adds LICENSE information">- adds LICENSE information</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-02-13T20:01:16Z" is="time-ago">Feb 13, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/README.md" class="js-directory-link" id="04c6e90faac2675aa89e2176d2eec7d8-442af182e5c20e5a2e6844fe597188b7c81340cb" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/2b6270a3bb56d8e284c8e04822c8fc13e89cf7a2" class="message" data-pjax="true" title="Update README.md">Update README.md</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-17T00:17:08Z" is="time-ago">Mar 16, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/banner.txt" class="js-directory-link" id="29a01a8a3ac385b86da006f03d4fe93b-55fd15c5320d3f909e79d235a92751fc42c4abfe" title="banner.txt">banner.txt</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/14192b434cfe456011de542d10bc8fde5833f7e2" class="message" data-pjax="true" title="add license header to builds">add license header to builds</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-10-14T18:31:55Z" is="time-ago">Oct 14, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/bower.json" class="js-directory-link" id="0a08a7565aba4405282251491979bb6b-0b3db9710d0835c1df5e8f27821ea507582ee096" title="bower.json">bower.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/683a5519adc3bab97d096b4b1e912decd6492903" class="message" data-pjax="true" title="prepare for release v0.6.0">prepare for release v0.6.0</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-20T22:01:16Z" is="time-ago">Mar 20, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/gulpfile.js" class="js-directory-link" id="b9e12334e9eafd8341a6107dd98510c9-e743f0d9cb07553da680392eb2ebc730dc4371f2" title="gulpfile.js">gulpfile.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/bf1c2b80c8ceb3d3f405486b114b060253f6a21b" class="message" data-pjax="true" title="expose gulp test through web-component-tester">expose gulp test through web-component-tester</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-11-13T23:15:27Z" is="time-ago">Nov 13, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/package.json" class="js-directory-link" id="b9cfc7f2cdf78a7f4b91a753d10865a2-43eef27977097a525263d66c4f4f19c91fc95684" title="package.json">package.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/683a5519adc3bab97d096b4b1e912decd6492903" class="message" data-pjax="true" title="prepare for release v0.6.0">prepare for release v0.6.0</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-20T22:01:16Z" is="time-ago">Mar 20, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/webcomponents-lite.js" class="js-directory-link" id="40058b2ef9953f2fa1f1d651fb3f12c1-b7a8d297f72401643a4d41e348b0e7ed5315ddff" title="webcomponents-lite.js">webcomponents-lite.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/f66f5a0a7353826d558bfa453df3589eb942daff" class="message" data-pjax="true" title="Merge pull request #250 from webcomponents/ie-lite-fixes
+
+Add WM and MO polyfills to lite for IE. Make build manifest match.">Merge pull request</a> <a href="https://github.com/webcomponents/webcomponentsjs/pull/250" class="issue-link" title="Add WM and MO polyfills to lite for IE. Make build manifest match.">#250</a> <a href="/webcomponents/webcomponentsjs/commit/f66f5a0a7353826d558bfa453df3589eb942daff" class="message" data-pjax="true" title="Merge pull request #250 from webcomponents/ie-lite-fixes
+
+Add WM and MO polyfills to lite for IE. Make build manifest match.">from webcomponents/ie-lite-fixes</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-20T19:18:43Z" is="time-ago">Mar 20, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/webcomponents/webcomponentsjs/blob/master/webcomponents.js" class="js-directory-link" id="2012b2e79d89e5a08a6cac49d145edd7-8112c7324e4a3f3078c6d67617d9daac2a828d55" title="webcomponents.js">webcomponents.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/webcomponents/webcomponentsjs/commit/bc7afc1f1fc8811247eaaa1eb0309c46f2360e47" class="message" data-pjax="true" title="Fix error calling .split on undefined.">Fix error calling .split on undefined.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-05T18:48:32Z" is="time-ago">Mar 5, 2015</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+  <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+    <h3>
+      <span class="octicon octicon-book"></span>
+      README.md
+    </h3>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a id="user-content-webcomponentsjs" class="anchor" href="#webcomponentsjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>webcomponents.js</h1>
+
+<p><a href="https://gitter.im/webcomponents/webcomponentsjs?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://camo.githubusercontent.com/da2edb525cde1455a622c58c0effc3a90b9a181c/68747470733a2f2f6261646765732e6769747465722e696d2f4a6f696e253230436861742e737667" alt="Join the chat at https://gitter.im/webcomponents/webcomponentsjs" data-canonical-src="https://badges.gitter.im/Join%20Chat.svg" style="max-width:100%;"></a></p>
+
+<p>A suite of polyfills supporting the <a href="http://webcomponents.org">Web Components</a> specs:</p>
+
+<p><strong>Custom Elements</strong>: allows authors to define their own custom tags (<a href="https://w3c.github.io/webcomponents/spec/custom/">spec</a>).</p>
+
+<p><strong>HTML Imports</strong>: a way to include and reuse HTML documents via other HTML documents (<a href="https://w3c.github.io/webcomponents/spec/imports/">spec</a>).</p>
+
+<p><strong>Shadow DOM</strong>: provides encapsulation by hiding DOM subtrees under shadow roots (<a href="https://w3c.github.io/webcomponents/spec/shadow/">spec</a>).</p>
+
+<p>This also folds in polyfills for <code>MutationObserver</code> and <code>WeakMap</code>.</p>
+
+<h2>
+<a id="user-content-releases" class="anchor" href="#releases" aria-hidden="true"><span class="octicon octicon-link"></span></a>Releases</h2>
+
+<p>Pre-built (concatenated &amp; minified) versions of the polyfills are maintained in the <a href="https://github.com/webcomponents/webcomponentsjs/releases">tagged versions</a> of this repo. There are two variants:</p>
+
+<p><code>webcomponents.js</code> includes all of the polyfills.</p>
+
+<p><code>webcomponents-lite.js</code> includes all polyfills except for shadow DOM.</p>
+
+<h2>
+<a id="user-content-browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser Support</h2>
+
+<p>Our polyfills are intended to work in the latest versions of evergreen browsers. See below
+for our complete browser support matrix:</p>
+
+<table>
+<thead>
+<tr>
+<th>Polyfill</th>
+<th align="center">IE10</th>
+<th align="center">IE11+</th>
+<th align="center">Chrome*</th>
+<th align="center">Firefox*</th>
+<th align="center">Safari 7+*</th>
+<th align="center">Chrome Android*</th>
+<th align="center">Mobile Safari*</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom Elements</td>
+<td align="center">~</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>HTML Imports</td>
+<td align="center">~</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Shadow DOM</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Templates</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+</tbody>
+</table>
+
+<p>*Indicates the current version of the browser</p>
+
+<p>~Indicates support may be flaky. If using Custom Elements or HTML Imports with Shadow DOM,
+you will get the non-flaky Mutation Observer polyfill that Shadow DOM includes.</p>
+
+<p>The polyfills may work in older browsers, however require additional polyfills (such as classList)
+to be used. We cannot guarantee support for browsers outside of our compatibility matrix.</p>
+
+<h3>
+<a id="user-content-manually-building" class="anchor" href="#manually-building" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manually Building</h3>
+
+<p>If you wish to build the polyfills yourself, you'll need <code>node</code> and <code>gulp</code> on your system:</p>
+
+<ul class="task-list">
+<li>install <a href="http://nodejs.org/">node.js</a> using the instructions on their website</li>
+<li>use <code>npm</code> to install <a href="http://gulpjs.com/">gulp.js</a>: <code>npm install -g gulp</code>
+</li>
+</ul>
+
+<p>Now you are ready to build the polyfills with:</p>
+
+<pre><code># install dependencies
+npm install
+# build
+gulp build
+</code></pre>
+
+<p>The builds will be placed into the <code>dist/</code> directory.</p>
+
+<h2>
+<a id="user-content-contribute" class="anchor" href="#contribute" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribute</h2>
+
+<p>See the <a href="/webcomponents/webcomponentsjs/blob/master/CONTRIBUTING.md">contributing guide</a></p>
+
+<h2>
+<a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Everything in this repository is BSD style license unless otherwise specified.</p>
+
+<p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
+
+<h2>
+<a id="user-content-known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known Issues</h2>
+
+<ul class="task-list">
+<li><a href="#constructor">Custom element's constructor property is unreliable</a></li>
+<li><a href="#contentedit">Contenteditable elements do not trigger MutationObserver</a></li>
+<li><a href="#hostcontext">ShadowCSS: :host-context(...):host(...) doesn't work</a></li>
+<li><a href="#execcommand">execCommand isn't supported under Shadow DOM</a></li>
+</ul>
+
+<h3>
+<a id="user-content-custom-elements-constructor-property-is-unreliable-" class="anchor" href="#custom-elements-constructor-property-is-unreliable-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom element's constructor property is unreliable <a id="user-content-constructor"></a>
+</h3>
+
+<p>See <a href="https://github.com/webcomponents/webcomponentsjs/issues/215">#215</a> for background.</p>
+
+<p>In Safari and IE, instances of Custom Elements have a <code>constructor</code> property of <code>HTMLUnknownElementConstructor</code> and <code>HTMLUnknownElement</code>, respectively. It's unsafe to rely on this property for checking element types.</p>
+
+<p>It's worth noting that <code>customElement.__proto__.__proto__.constructor</code> is <code>HTMLElementPrototype</code> and that the prototype chain isn't modified by the polyfills(onto <code>ElementPrototype</code>, etc.)</p>
+
+<h3>
+<a id="user-content-contenteditable-elements-do-not-trigger-mutationobserver-" class="anchor" href="#contenteditable-elements-do-not-trigger-mutationobserver-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contenteditable elements do not trigger MutationObserver <a id="user-content-contentedit"></a>
+</h3>
+
+<p>Using the MutationObserver polyfill, it isn't possible to monitor mutations of an element marked <code>contenteditable</code>.
+See <a href="https://groups.google.com/forum/#!msg/polymer-dev/LHdtRVXXVsA/v1sGoiTYWUkJ">the mailing list</a></p>
+
+<h3>
+<a id="user-content-shadowcss-host-contexthost-doesnt-work-" class="anchor" href="#shadowcss-host-contexthost-doesnt-work-" aria-hidden="true"><span class="octicon octicon-link"></span></a>ShadowCSS: :host-context(...):host(...) doesn't work <a id="user-content-hostcontext"></a>
+</h3>
+
+<p>See <a href="https://github.com/webcomponents/webcomponentsjs/issues/16">#16</a> for background.</p>
+
+<p>Under the shadow DOM polyfill, rules like:</p>
+
+<pre><code>:host-context(.foo):host(.bar) {...}
+</code></pre>
+
+<p>don't work, despite working under native Shadow DOM. The solution is to use <code>polyfill-next-selector</code> like:</p>
+
+<pre><code>polyfill-next-selector { content: '.foo :host.bar, :host.foo.bar'; }
+</code></pre>
+
+<h3>
+<a id="user-content-execcommand-and-contenteditable-isnt-supported-under-shadow-dom-" class="anchor" href="#execcommand-and-contenteditable-isnt-supported-under-shadow-dom-" aria-hidden="true"><span class="octicon octicon-link"></span></a>execCommand and contenteditable isn't supported under Shadow DOM <a id="user-content-execcommand"></a>
+</h3>
+
+<p>See <a href="https://github.com/webcomponents/webcomponentsjs/issues/212">#212</a></p>
+
+<p><code>execCommand</code>, and <code>contenteditable</code> aren't supported under the ShadowDOM polyfill, with commands that insert or remove nodes being especially prone to failure.</p>
+</article>
+  </div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2015 <span title="0.04395s from github-fe120-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-d22b59d0085e83b7549ba4341ec9e68f80c2f29c8e49213ee182003dc8d568c6.js"></script>
+      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-b1799c46bb59be68d925cba885ab38303711632ad670e579e1bc4857963e52cb.js"></script>
+      
+      
+
+  </body>
+</html>
+

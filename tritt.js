@@ -1,17 +1,25 @@
 'use strict';
 
+/*****************************************
+*
+* Tritt.js
+* Simple, flexible custom
+* elements with events and
+* data-binding
+*
+* Author: T-Jay Tipps
+* https://github.com/deansredhalo/tritt
+*
+*****************************************/
+
 window.hostElements = [];
 
 window.Tritt = function(element, events) {
-	events = events || {};
 	var that = this;
 
-	window.hostElements.push({ 'name': element });
-	for (var i = 0; i < window.hostElements.length; i++) {
-		if (window.hostElements[i]['name'] === element) {
-			window.hostElements[i].events = events;
-		}
-	}
+	events = events || {};
+
+	Tritt.addHostElements(element, events);
 
 	window.addEventListener('DOMContentLoaded', function() {
 		Tritt.registerElement(element, events);
@@ -20,6 +28,16 @@ window.Tritt = function(element, events) {
 		Tritt.parseBindings(element, events['bindings']);
 	}, false);
 };
+
+Tritt.addHostElements = function(element, events) {
+	console.log(events);
+	window.hostElements.push({ 'name': element });
+	for (var i = 0; i < window.hostElements.length; i++) {
+		if (window.hostElements[i]['name'] === element) {
+			window.hostElements[i].events = events;
+		}
+	}
+}
 
 Tritt.registerElement = function(element, events) {
 	var that = this;
@@ -81,6 +99,7 @@ Tritt.populateShadowDOM = function(element) {
 Tritt.parseStylesAndScripts = function(element) {
 	var that = this;
 
+	var element 			= document.querySelector(element);
 	var styleNode;
 	var styleNodeTypeAttr;
 	var styleContents;
@@ -88,7 +107,6 @@ Tritt.parseStylesAndScripts = function(element) {
 	var scriptNodeTypeAttr;
 	var scriptContents;
 
-	var element = document.querySelector(element);
 
 	if (element.hasAttributes()) {
 		if (element.attributes['shadow'] !== undefined) {
@@ -132,14 +150,14 @@ Tritt.parseStylesAndScripts = function(element) {
 };
 
 Tritt.processFile = function(file) {
-
-	var loc = window.location.pathname;
-	var dir = loc.substring(0, loc.lastIndexOf('/'));
+	var loc 		= window.location.pathname;
+	var dir 		= loc.substring(0, loc.lastIndexOf('/'));
+	var xmlhttp;
 
 	file = 'http://' + window.location.host + dir + '/' + file;
 
 	return new Promise(function(resolve, reject) {
-		var xmlhttp = new XMLHttpRequest();
+		xmlhttp = new XMLHttpRequest();
 		xmlhttp.open('GET', file, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
@@ -166,30 +184,36 @@ Tritt.attachEvents = function(element, events) {
 };
 
 Tritt.parseBindings = function(element, bindings) {
-	var elementSel = document.querySelector(element);
+	var elementSel 		= document.querySelector(element);
+	var parseElement 	= elementSel.shadowRoot;
+	var bound;
+	var bound1;
+	var bound2;
+	var bindValue;
+	var rewritable;
 
 	if (elementSel.shadowRoot) {
-		var bound = elementSel.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
+		bound = elementSel.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
 
 		for (var i = 0; i < bound.length; i++) {
 
 			if (bound[i].indexOf('{{') !== -1) {
-				var bound1 = bound[i].replace(/{{/g, '');
-				var bound2 = bound1.replace(/}}/g, '');
+				bound1 = bound[i].replace(/{{/g, '');
+				bound2 = bound1.replace(/}}/g, '');
 
 				if (bound2.indexOf('()') === -1) {
 					if (elementSel.shadowRoot.querySelectorAll('[bind]')) {
 						for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
 							if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].nodeValue === bound[i]) {
-								var bindValue = bindings[bound2];
+								bindValue = bindings[bound2];
 								elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue;		
 							} 
 						}
 					}
 				}
 				else {
-					var rewritable = bound2.replace(/\(\)/g, '');
-					elementSel[rewritable]();
+					rewritable = bound2.replace(/\(\)/g, '');
+					elementSel[rewritable](elementSel, parseElement, bindings);
 				}
 			}
 		}

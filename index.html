@@ -9,12 +9,18 @@
     <script type="text/javascript">
       Tritt('happy-dance', {
         events: {
-          trucks: function() {
-            document.querySelector('happy-dance').addEventListener('mouseover', function() {
-              document.querySelector('::shadow div').style.backgroundColor = 'blue';
+          trucks: function(rootElement, rootShadow, bindings) {
+
+            rootElement.addEventListener('mouseover', function() {
+              rootShadow.querySelector('div').style.backgroundColor = 'blue';
             });
 
           },
+          changeName: function(rootElement, rootShadow, bindings) {
+            setTimeout(function() {
+              bindings.name = 'Terrence';
+            }, 3000);
+          }
         },
         bindings : {
           name: "Ricardo Lamas"
@@ -28,7 +34,7 @@
   <body>
     <div class="poop"></div>
     <happy-dance shadow style="style.css" script="script.js">
-      <div class="poop" action="{{trucks()}}">
+      <div class="poop" action="{{trucks()}} {{changeName()}}">
         <span bind="{{name}}"></span>
       </div>
       <div>
