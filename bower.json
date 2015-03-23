@@ -15,12 +15,13 @@
   "main": "tritt.js",
   "private": false,
   "dependencies": {
-    "webcomponentsjs": "https://github.com/webcomponents/webcomponentsjs",
+    "webcomponentsjs": "*",
     "gulp": "~3.8.11"
   },
   "license": "MIT",
   "ignore": [
     "script.js",
-    "style.css"
+    "style.css",
+    "index.html"
   ]
 }
