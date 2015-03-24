@@ -1,8 +1,6 @@
 ![Travis Tritt](http://celebratearkansasmagazine.com/wp-content/uploads/2011/07/travis-tritt.jpg) 
 
-# Tritt
-
-[![js-standard-style](https://raw.githubusercontent.com/feross/standard/master/badge.png)](https://github.com/feross/standard)
+# Tritt [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
 
 ### Web Component Custom Elements with events handling and simple data-binding
 
