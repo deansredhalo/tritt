@@ -82,6 +82,33 @@ To have Tritt create a shadow DOM for you in your element, you can use the **sha
 
 Any content found inside the element will automatically be moved into the shadow DOM.
 
+Any content that you'd like to keep _outside_ of the shadow DOM may be done so by attaching a **light** attribute to the parent element. Tritt will remove this item and place it outside of the shadow DOM, exposing it to global styles. The markup for this would be as follows:
+
+```html
+<element-name shadow>
+	<div>
+		<span>Shadowy</span>
+	</div>
+	<div light>
+		<span>Lightness</span>
+	</div>
+</element-name>
+```
+
+And Tritt would parse and output the follwing markup:
+
+```html
+<element-name shadow>
+	#shadow-root
+		<div>
+			<span>Shadowy</span>
+		</div>
+	<div light>
+		<span>Lightness</span>
+	</div>
+</element-name>
+```
+
 If you'd like to include an external script or style within your element, you can use the **script** and **style** attributes to specify your local files. **Note:** Tritt expects a shadow DOM within your element to include external scripts and styles.
 
 ```html
@@ -180,6 +207,6 @@ Remember that any styles included inside your element will be encapsulated, so t
 
 Thorough testing and unit tests.
 
-Add `light` attribute support.
+~~Add `light` attribute support.~~
 
 Add Gulp task to export custom element for HTML Imports.

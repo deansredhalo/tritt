@@ -136,7 +136,7 @@ Tritt.createShadowDOM = function(element) {
 				// ...does it have a shadow attribute?
 				if (unaltered[i].attributes['shadow'] !== undefined) {
 					// populate the shadow DOM with content
-					window.Tritt.populateShadowDOM(unaltered[i]);
+					Tritt.populateShadowDOM(unaltered[i]);
 				}
 			}
 		}
@@ -151,6 +151,23 @@ Tritt.createShadowDOM = function(element) {
  * @param {string} element The name of the element we created
  */
 Tritt.populateShadowDOM = function(element) {
+	var lightDom;
+
+	// with this loop, we will skip through all the children in the element
+	// we will determine if they have the "light" attribute
+	// if they do, we will snag them and save them in the 
+	// lightDom variable
+	for (var i = 0; i < element.childNodes.length; i++) {
+		if (element.childNodes[i].nodeName !== '#text') {
+			if (element.childNodes[i].hasAttributes()) {
+				if (element.childNodes[i].attributes['light'] !== undefined) {
+					lightDom = element.childNodes[i];
+					element.removeChild(lightDom);
+				}
+			}
+		}
+	}
+
 	// create a shadow DOM portion	
 	var shadow = element.createShadowRoot();
 
@@ -159,6 +176,9 @@ Tritt.populateShadowDOM = function(element) {
 
 	// remove the light DOM content
 	element.innerHTML = null;
+
+	// now let's reinsert our light DOM elements after the shadow
+	element.insertBefore(lightDom, element.childNodes[element.childNodes.length]);
 
 	console.log('Created and populated Shadow DOM for element', element);
 
@@ -190,7 +210,7 @@ Tritt.parseStylesAndScripts = function(element) {
 
 			// does our element have a style attribute
 			if(element.attributes['style'] !== undefined) {
-				
+
 				if (element.attributes['style'].nodeValue !== undefined) {
 
 					// create a style element
@@ -326,42 +346,45 @@ Tritt.parseBindings = function(element, bindings) {
 	var bindValue;
 	var rewritable;
 
-	// do we have a shadow DOM?
-	if (elementSel.shadowRoot) {
-		// look for all text between {{ }} and return those elements
-		bound = elementSel.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
+	if (bindings) {
 
-		// loop them
-		for (var i = 0; i < bound.length; i++) {
+		// do we have a shadow DOM?
+		if (elementSel.shadowRoot) {
+			// look for all text between {{ }} and return those elements
+			bound = elementSel.shadowRoot.innerHTML.match(/{{(.*?)}}/g);
 
-			// if we have the bindings markup
-			if (bound[i].indexOf('{{') !== -1) {
-				// remove the sets of braces	
-				bound1 = bound[i].replace(/{{/g, '');
-				bound2 = bound1.replace(/}}/g, '');
+			// loop them
+			for (var i = 0; i < bound.length; i++) {
 
-				// if there's not a function marker, we know it's a text binding
-				if (bound2.indexOf('()') === -1) {
-					// make sure we have a bind attribute that it's assigned to
-					if (elementSel.shadowRoot.querySelectorAll('[bind]')) {
-						// loop through any of the elements that have that particular binding
-						for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
-							// make sure the values match the element selected
-							if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].nodeValue === bound[i]) {
-								// find the value of the binding
-								bindValue = bindings[bound2];
-								// attach it
-								elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue;		
-							} 
+				// if we have the bindings markup
+				if (bound[i].indexOf('{{') !== -1) {
+					// remove the sets of braces	
+					bound1 = bound[i].replace(/{{/g, '');
+					bound2 = bound1.replace(/}}/g, '');
+
+					// if there's not a function marker, we know it's a text binding
+					if (bound2.indexOf('()') === -1) {
+						// make sure we have a bind attribute that it's assigned to
+						if (elementSel.shadowRoot.querySelectorAll('[bind]')) {
+							// loop through any of the elements that have that particular binding
+							for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
+								// make sure the values match the element selected
+								if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].nodeValue === bound[i]) {
+									// find the value of the binding
+									bindValue = bindings[bound2];
+									// attach it
+									elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue;		
+								} 
+							}
 						}
 					}
-				}
-				// otherwise, we have a function binding
-				else {
-					// get rid of the parentheses
-					rewritable = bound2.replace(/\(\)/g, '');
-					// run the function assigned
-					elementSel[rewritable](elementSel, parseElement, bindings);
+					// otherwise, we have a function binding
+					else {
+						// get rid of the parentheses
+						rewritable = bound2.replace(/\(\)/g, '');
+						// run the function assigned
+						elementSel[rewritable](elementSel, parseElement, bindings);
+					}
 				}
 			}
 		}
@@ -390,5 +413,3 @@ Tritt.watchForChanges = function(element, object) {
 		});
 	}
 };
-
-// TODO: Bring in events, such as click, mouseover, etc
