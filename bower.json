@@ -16,7 +16,6 @@
   "private": false,
   "dependencies": {
     "webcomponentsjs": "*",
-    "gulp": "~3.8.11",
     "object.observe": "~0.2.3"
   },
   "license": "MIT",
