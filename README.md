@@ -20,10 +20,6 @@ Installation is simplest by using [Bower](http://www.bower.io) with the followin
 
 to ensure that Tritt is saved in your application's dependencies.  Tritt will be automatically installed into your `bower_components` directory, along with Tritt's own dependencies.
 
-It's important to check for dependancy updates, so next run
-
-	$ bower install && npm install
-
 Once installation is completed, you can import Tritt and webcomponentsjs polyfill into the page by placing the following lines in the HEAD of your HTML file
 
 	<script src="bower_components/tritt/bower_components/webcomponentsjs/webcomponents.js"></script>
