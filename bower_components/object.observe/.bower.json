@@ -1,0 +1,37 @@
+{
+  "name": "object.observe",
+  "version": "0.2.3",
+  "homepage": "https://github.com/MaxArt2501/object-observe",
+  "authors": [
+    "Massimo Artizzu <maxart.x@gmail.com>"
+  ],
+  "description": "Object.observe polyfill based on ES7 spec",
+  "main": "dist/object-observe.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "observe",
+    "data-binding",
+    "Object.observe"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "util"
+  ],
+  "_release": "0.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.3",
+    "commit": "e4a571137764cb1578f0d69ea78cd30a782882de"
+  },
+  "_source": "git://github.com/MaxArt2501/object-observe.git",
+  "_target": "~0.2.3",
+  "_originalSource": "object.observe",
+  "_direct": true
+}

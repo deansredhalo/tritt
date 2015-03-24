@@ -151,23 +151,6 @@ Tritt.createShadowDOM = function(element) {
  * @param {string} element The name of the element we created
  */
 Tritt.populateShadowDOM = function(element) {
-	var lightDom;
-
-	// with this loop, we will skip through all the children in the element
-	// we will determine if they have the "light" attribute
-	// if they do, we will snag them and save them in the 
-	// lightDom variable
-	for (var i = 0; i < element.childNodes.length; i++) {
-		if (element.childNodes[i].nodeName !== '#text') {
-			if (element.childNodes[i].hasAttributes()) {
-				if (element.childNodes[i].attributes['light'] !== undefined) {
-					lightDom = element.childNodes[i];
-					element.removeChild(lightDom);
-				}
-			}
-		}
-	}
-
 	// create a shadow DOM portion	
 	var shadow = element.createShadowRoot();
 
@@ -176,9 +159,6 @@ Tritt.populateShadowDOM = function(element) {
 
 	// remove the light DOM content
 	element.innerHTML = null;
-
-	// now let's reinsert our light DOM elements after the shadow
-	element.insertBefore(lightDom, element.childNodes[element.childNodes.length]);
 
 	console.log('Created and populated Shadow DOM for element', element);
 
@@ -211,23 +191,19 @@ Tritt.parseStylesAndScripts = function(element) {
 			// does our element have a style attribute
 			if(element.attributes['style'] !== undefined) {
 
-				if (element.attributes['style'].nodeValue !== undefined) {
+				if (element.attributes['style'].value !== undefined) {
 
 					// create a style element
 					styleNode = document.createElement('style');
 
 					// set the type attribute to text/css
-					styleNodeTypeAttr = document.createAttribute('type');
-					styleNodeTypeAttr.value = "text/css";
+					styleNode.setAttribute('type', 'text/css');
 
 					// read the style file
-					Tritt.processFile(element.attributes['style'].nodeValue).then(function(response) {
+					Tritt.processFile(element.attributes['style'].value).then(function(response) {
 
 						// set the content
 						styleContents = response;
-
-						// add the type attribute
-						styleNode.attributes.setNamedItem(styleNodeTypeAttr);
 
 						// make the content equal the contents of the file
 						styleNode.textContent = styleContents;
@@ -241,23 +217,19 @@ Tritt.parseStylesAndScripts = function(element) {
 			// what about a script attribute?
 			if (element.attributes['script'] !== undefined) {
 
-				if (element.attributes['script'].nodeValue !== undefined) {
+				if (element.attributes['script'].value !== undefined) {
 
 					// create a new element for the script
 					scriptNode = document.createElement('script');
 
 					// set the script type attribute to text/javascript
-					scriptNodeTypeAttr = document.createAttribute('type');
-					scriptNodeTypeAttr.value = "text/javascript";
+					scriptNode.setAttribute('type', 'text/javascript');
 
 					// read the script
-					Tritt.processFile(element.attributes['script'].nodeValue).then(function(response) {
+					Tritt.processFile(element.attributes['script'].value).then(function(response) {
 						
 						// grab the contents
 						scriptContents = response;
-
-						// add the type attribute
-						scriptNode.attributes.setNamedItem(scriptNodeTypeAttr);
 
 						// set the content equal to the file
 						scriptNode.textContent = scriptContents;
@@ -369,7 +341,7 @@ Tritt.parseBindings = function(element, bindings) {
 							// loop through any of the elements that have that particular binding
 							for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
 								// make sure the values match the element selected
-								if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].nodeValue === bound[i]) {
+								if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].value === bound[i]) {
 									// find the value of the binding
 									bindValue = bindings[bound2];
 									// attach it
