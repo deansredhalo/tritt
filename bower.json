@@ -1,7 +1,7 @@
 {
   "name": "tritt",
   "description": "Simple custom elements and web components with data binding.",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "authors": "T-Jay Tipps",
   "repository": {
     "type": "git",

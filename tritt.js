@@ -19,7 +19,7 @@
  */
 window.hostElements = []
 
-var Tritt = {}
+var Tritt = Tritt || {}
 
 /*
  * Main constructor function
@@ -322,3 +322,5 @@ Tritt.watchForChanges = function (element, object) {
     })
   }
 }
+
+
