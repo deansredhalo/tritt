@@ -20,7 +20,11 @@
 				}
 			},
 			bindings: {
-				userName: "Reveal user name..."
+				userName: "Reveal user name...",
+				address: {
+					city: 'Nashville',
+					state: 'TN'
+				}
 			}
 		});
 	</script>
@@ -29,6 +33,8 @@
 		<custom-greeting shadow style="style.css">
 			<div action="{{changeGreeting()}}">
 				<span bind="{{userName}}"></span>
+				<span bind="{{address.city}}"></span>
+				<span bind="{{address.state}}"></span>
 			</div>
 		</custom-greeting>
 	</body>

@@ -259,7 +259,11 @@ Tritt.parseBindings = function (element, bindings) {
   var bound
   var bound1
   var bound2
+  var bound3
   var bindValue
+  var bindingKeys
+  var tmpObj
+  var firstKey
   var rewritable
 
   if (bindings) {
@@ -280,12 +284,33 @@ Tritt.parseBindings = function (element, bindings) {
             if (elementSel.shadowRoot.querySelectorAll('[bind]')) {
               // loop through any of the elements that have that particular binding
               for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
-                // make sure the values match the element selected
-                if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].value === bound[i]) {
-                  // find the value of the binding
-                  bindValue = bindings[bound2]
-                  // attach it
-                  elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue
+                if (~bound2.indexOf('.')) {
+                  bound3 = bound2.split('.')
+                  firstKey = bound3[0]
+                  firstKey = firstKey.replace(/{{/g, '')
+                  firstKey = firstKey.replace(/}}/g, '')
+                  tmpObj = bindings[firstKey]
+                  bindingKeys = null
+                  bindingKeys = firstKey
+                  for (var key in tmpObj) {
+                    bindingKeys = firstKey + '.' + key
+                    if (bound2 === bindingKeys) {
+                      // find the value of the binding
+                      bindValue = bindings[firstKey][key]
+                      if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].value === bound[i]) {
+                        // attach it
+                        elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue
+                      }
+                    }
+                  }
+                } else {
+                  // make sure the values match the element selected
+                  if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].value === bound[i]) {
+                    // find the value of the binding
+                    bindValue = bindings[bound2]
+                    // attach it
+                    elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue
+                  }
                 }
               }
             }
