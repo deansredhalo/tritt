@@ -178,4 +178,10 @@ Remember that any styles included inside your element will be encapsulated, so t
 
 ## Things to do
 
+Distributed content.
+
+Attributes on element for binding.
+
+Expanded templates (repeats, conditionals, etc.)
+
 Thorough testing and unit tests.

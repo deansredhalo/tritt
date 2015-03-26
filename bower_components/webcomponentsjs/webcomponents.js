@@ -27,6 +27,7 @@ window.WebComponents = window.WebComponents || {};
       }
     }
     if (flags.log) {
+      console.log(flags)
       var parts = flags.log.split(",");
       flags.log = {};
       parts.forEach(function(f) {

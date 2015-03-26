@@ -232,18 +232,18 @@ Tritt.processFile = function (file) {
 Tritt.attachEvents = function (element, events) {
   // create a new Promise object
   return new Promise(function (resolve, reject) {
-      element = document.querySelector(element)
+    element = document.querySelector(element)
 
-      // if we have events
-      if (events) {
-        // loop through and create keys
-        for (var key in events['events']) {
-          if (key !== undefined) {
-            element[key] = events.events[key]
-          }
+    // if we have events
+    if (events) {
+      // loop through and create keys
+      for (var key in events['events']) {
+        if (key !== undefined) {
+          element[key] = events.events[key]
         }
       }
-    })
+    }
+  })
 }
 
 /*
@@ -322,5 +322,3 @@ Tritt.watchForChanges = function (element, object) {
     })
   }
 }
-
-
