@@ -118,6 +118,33 @@ You can have multiple events bound to one element, just separate each of them wi
 </element-name>
 ```
 
+Sometimes it will be helpful to have nested objects for a text binding. Tritt can handle object bindings, however it is recommended for performance to never go _more than one object level deep_ for bindings.  Example:
+
+```js
+Tritt('element-name', {
+	events: {
+		myEvent: function(rootElement, rootShadow, bindings) {
+			...
+		}
+	},
+	bindings: {
+		myBinding: "Your name here",
+		myDeepBinding: {
+			deepObject1: "I'm deep",
+			deepObject2: "I'm also deep"
+		}
+	}
+});
+```
+
+```html
+<element-name shadow script="script.js" style="style.css" action="{{event1()}} {{event2()}}">
+	<span bind="{{text}}"></span>
+	<span bind="{{myDeepBinding.deepObject1}}"></span>
+	<span bind="{{myDeepBinding.deepObject2}}"></span>
+</element-name>
+```
+
 Event bindings have access to the text bindings listed under the `bindings` object of the actions.  These are passed as the `bindings` parameter.
 
 ```js
