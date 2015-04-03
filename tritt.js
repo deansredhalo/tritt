@@ -286,7 +286,7 @@ Tritt.parseBindings = function (element, bindings) {
               for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
                 // if we have a dot notation binding
                 if (~bound2.indexOf('.')) {
-                  //split and get the first level binding, strip formatting
+                  // split and get the first level binding, strip formatting
                   bound3 = bound2.split('.')
                   firstKey = bound3[0]
                   firstKey = firstKey.replace(/{{/g, '')
