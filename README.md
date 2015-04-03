@@ -94,6 +94,17 @@ Tritt will parse these files and place their contents at the beginning and end o
 
 The scripts will have global run access. 
 
+If you wish to have external content be provided into your custom element, you can leave a space for it to be included by using the <content> tag.
+
+```html
+<element-name shadow script="script.js" style="style.css">
+	...
+	<content></content>
+</element-name>
+```
+
+Any external content that is placed inside the element will be parsed by Tritt's cousin Trevino and placed inside these tags.
+
 ### Data and event binding in Tritt
 
 Tritt employs a simple yet poweful data and event binding system.  It uses familiar {{ }} syntax to denote bindings, the main difference being between text bindings and event bindings. These events should be specified in your actions object when you invoked Tritt.
