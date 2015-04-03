@@ -284,19 +284,27 @@ Tritt.parseBindings = function (element, bindings) {
             if (elementSel.shadowRoot.querySelectorAll('[bind]')) {
               // loop through any of the elements that have that particular binding
               for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
+                // if we have a dot notation binding
                 if (~bound2.indexOf('.')) {
+                  //split and get the first level binding, strip formatting
                   bound3 = bound2.split('.')
                   firstKey = bound3[0]
                   firstKey = firstKey.replace(/{{/g, '')
                   firstKey = firstKey.replace(/}}/g, '')
+                  // the first object belongs to the first level binding
                   tmpObj = bindings[firstKey]
                   bindingKeys = null
+                  // set the binding key to start at the top
                   bindingKeys = firstKey
+                  // loop keys
                   for (var key in tmpObj) {
+                    // add in the keys
                     bindingKeys = firstKey + '.' + key
+                    // if the key matches the binding we have on the page
                     if (bound2 === bindingKeys) {
                       // find the value of the binding
                       bindValue = bindings[firstKey][key]
+                      // if the element attributes match
                       if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].value === bound[i]) {
                         // attach it
                         elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue
