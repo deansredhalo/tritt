@@ -261,9 +261,6 @@ Tritt.parseBindings = function (element, bindings) {
   var bound2
   var bound3
   var bindValue
-  var bindingKeys
-  var tmpObj
-  var firstKey
   var rewritable
 
   if (bindings) {
@@ -284,6 +281,7 @@ Tritt.parseBindings = function (element, bindings) {
             if (elementSel.shadowRoot.querySelectorAll('[bind]')) {
               // loop through any of the elements that have that particular binding
               for (var j = 0; j < elementSel.shadowRoot.querySelectorAll('[bind]').length; j++) {
+<<<<<<< Updated upstream
                 // if we have a dot notation binding
                 if (~bound2.indexOf('.')) {
                   // split and get the first level binding, strip formatting
@@ -318,6 +316,14 @@ Tritt.parseBindings = function (element, bindings) {
                     bindValue = bindings[bound2]
                     // attach it
                     elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue
+                  } else {
+                    // make sure the values match the element selected
+                    if (elementSel.shadowRoot.querySelectorAll('[bind]')[j].attributes['bind'].value === bound[i]) {
+                      // find the value of the binding
+                      bindValue = bindings[bound2]
+                      // attach it
+                      elementSel.shadowRoot.querySelectorAll('[bind]')[j].textContent = bindValue
+                    }
                   }
                 }
               }
@@ -335,6 +341,31 @@ Tritt.parseBindings = function (element, bindings) {
   }
   // observe the binding for any changes that may occur
   Tritt.watchForChanges(element, bindings)
+}
+
+Tritt.walkBindings = function (arr, bindings) {
+  for (var x = 0; x < arr.length; x++) {
+    if (bindings[arr[x]] instanceof Object) {
+      Tritt.walkObject(bindings[arr[x]], arr[x])
+    } else {
+      console.log(bindings, arr[x])
+      console.log(bindings[arr[x]])
+      return bindings[arr[x]]
+    }
+  }
+}
+
+Tritt.walkObject = function (bindings) {
+  var bindValue
+
+  for (var key in bindings) {
+    if (bindings[key] instanceof Object) {
+      Tritt.walkObject(bindings[key])
+    } else {
+      bindValue = bindings[key]
+      return bindValue
+    }
+  }
 }
 
 /*
